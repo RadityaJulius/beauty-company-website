@@ -58,8 +58,6 @@ if (isset($_POST['login'])) {
     <p class="text-center mt-3">Belum punya akun? <a href="register.php">Daftar di sini</a></p>
 </div>
 <script>
-    const user = <?php echo isset($userJson) ? $userJson : 'null'; ?>;
-    console.log("User fetched from database:", user);
 </script>
 </body>
 </html>

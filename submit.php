@@ -13,14 +13,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $tanggal_treatment = mysqli_real_escape_string($conn, $_POST['tanggal_treatment']);
 
     // Query untuk mendapatkan harga treatment
-    $query = "SELECT harga FROM treatment WHERE kode = '$treatment_id'";
+    $query = "SELECT harga, nama_treatment FROM treatment WHERE kode = '$treatment_id'";
     $result = $conn->query($query);
     $row = $result->fetch_assoc();
     $harga = $row['harga'];
+    $nama_treatment = $row['nama_treatment'];
 
     // Query untuk memasukkan data booking ke dalam tabel costumer
-    $insert_query = "INSERT INTO costumer (nama, nomor_hp, alamat, email, treatment_id, harga, tanggal_treatment) 
-                     VALUES ('$nama', '$nomor_hp', '$alamat', '$email', '$treatment_id', '$harga', '$tanggal_treatment')";
+    $insert_query = "INSERT INTO costumer (nama, nomor_hp, alamat, email, treatment_id, harga, tanggal_treatment, nama_treatment) 
+                     VALUES ('$nama', '$nomor_hp', '$alamat', '$email', '$treatment_id', '$harga', '$tanggal_treatment', '$nama_treatment')";
 
     // Eksekusi query
     if ($conn->query($insert_query) === TRUE) {

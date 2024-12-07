@@ -66,6 +66,7 @@
 
         <nav id="navmenu" class="navmenu">
           <ul>
+            <li><a href="admin.php" class="active">Admin</a></li>
             <li><a href="#hero" class="active">Home</a></li>
             <li><a href="#about">Story</a></li>
             <li><a href="#services">Treatment</a></li>

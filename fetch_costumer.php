@@ -1,7 +1,7 @@
 <?php
 include 'db_connection.php';
 // Query to fetch data from 'costumer' table
-$sql = "SELECT id, nama, nomor_hp, alamat, email, treatment_id, harga, tanggal_treatment FROM costumer";
+$sql = "SELECT id, nama, nomor_hp, alamat, email, treatment_id, harga, tanggal_treatment, nama_treatment FROM costumer";
 $result = $conn->query($sql);
 
 $data = [];

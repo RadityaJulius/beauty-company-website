@@ -33,8 +33,7 @@
     </form>
 </div>
 <script>
-    const user = <?php echo isset($userJson) ? $userJson : 'null'; ?>;
-    console.log("User fetched from database:", user);
+
 </script>
 </body>
 </html>
