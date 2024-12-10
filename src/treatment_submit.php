@@ -1,5 +1,5 @@
 <?php
-include 'db_connection.php';
+include '../db_connection.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Ambil data dari form
@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Eksekusi query
     if ($conn->query($insert_query) === TRUE) {
         // Jika berhasil, alihkan ke halaman konfirmasi atau halaman lainnya
-        echo "<script>alert('Berhasil ditambahkan!'); window.location.href = 'admin.php';</script>";
+        echo "<script>alert('Berhasil ditambahkan!'); window.location.href = '../public/admin.php';</script>";
     } else {
         // Jika terjadi error
         echo "Error: " . $insert_query . "<br>" . $conn->error;

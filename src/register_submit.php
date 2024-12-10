@@ -25,7 +25,7 @@ try {
         $stmt->bindParam(':role', $role);
         $stmt->execute();
 
-        echo "<script>alert('Register berhasil!'); window.location.href = 'login.php';</script>";
+        echo "<script>alert('Register berhasil!'); window.location.href = '../public/login.php';</script>";
     }
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();

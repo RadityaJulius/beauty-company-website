@@ -1,6 +1,6 @@
 <?php
 // Include file untuk koneksi ke database
-include 'db_connection.php';
+include '../db_connection.php';
 
 // Cek apakah form sudah disubmit
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Eksekusi query
     if ($conn->query($insert_query) === TRUE) {
         // Jika berhasil, alihkan ke halaman konfirmasi atau halaman lainnya
-        echo "<script>alert('Booking berhasil!'); window.location.href = 'dashboard.php';</script>";
+        echo "<script>alert('Booking berhasil!'); window.location.href = '../public/dashboard.php';</script>";
     } else {
         // Jika terjadi error
         echo "Error: " . $insert_query . "<br>" . $conn->error;
