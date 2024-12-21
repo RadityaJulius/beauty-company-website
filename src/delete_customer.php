@@ -8,7 +8,7 @@ if (isset($_GET['id'])) {
     $conn->query($sql);
 }
 
-header("location: admin.php");
+header("location: ../public/admin.php");
 exit;
 
 ?>
