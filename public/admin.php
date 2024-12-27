@@ -20,6 +20,9 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/locale/id.min.js"
     integrity="sha512-he8U4ic6kf3kustvJfiERUpojM8barHoz0WYpAUDWQVn61efpm3aVAD8RWL8OloaDDzMZ1gZiubF9OSdYBqHfQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  </link>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
 </head>
 
@@ -163,8 +166,8 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
                   class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 focus:outline-none"
                   role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                   <!-- Active: "bg-gray-100 outline-none", Not Active: "" -->
-                  <a href="../src/logout.php" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
-                    id="user-menu-item-2">Sign out</a>
+                  <a href="../src/logout.php" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
+                    tabindex="-1" id="user-menu-item-2">Sign out</a>
                 </div>
               </div>
             </div>
@@ -187,12 +190,83 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
         </div>
       </nav>
 
-
-      <!-- Treatment Table -->
+      <!-- Content -->
       <div class="m-4">
-        <h1 class="text-xl mb-3 font-bold">Treatments Booked</h1>
-        <h2 class="font-bold">Total treatments booked:</h2>
-        <div class="mb-4 border rounded-lg h-64 overflow-y-auto bg-white">
+        <!-- Overview -->
+        <div class="bg-gray-100 font-roboto">
+          <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
+              <!-- Number of active staff -->
+              <div class="flex justify-around items-center p-2 bg-white rounded-lg shadow-md">
+                <div class="flex">
+                  <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
+                    <i class="fas fa-user-md text-green-500 text-2xl"></i>
+                  </div>
+                  <div class="ml-4">
+                    <h2 class="text-xl font-bold">Active Staff</h2>
+                    <p class="text-gray-600">Number</p>
+                    <?php
+                    include '../db_connection.php';
+                    $query = 'SELECT COUNT(id) AS NumberOfStaff FROM staff;';
+                    $result = $conn->query($query);
+                    $resultData = $result->fetch_assoc();
+                    echo "<p class='text-2xl font-bold'>{$resultData['NumberOfStaff']}</p>";
+                    ?>
+                  </div>
+                </div>
+                <button onclick='printLaporan("print-staff")'
+                  class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                  <i class="fas fa-print mr-2"></i> Print
+                </button>
+              </div>
+              <!-- Today's appointments -->
+              <div class="flex justify-around items-center p-2 bg-white rounded-lg shadow-md">
+                <div class="flex">
+                  <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center">
+                    <i class="fas fa-calendar-day text-yellow-500 text-2xl"></i>
+                  </div>
+                  <div class="ml-4">
+                    <h2 class="text-xl font-bold">Total</h2>
+                    <p class="text-gray-600">Appointments</p>
+                    <?php
+                    include '../db_connection.php';
+                    $query = 'SELECT COUNT(id) AS NumberOfAppointments FROM costumer;';
+                    $result = $conn->query($query);
+                    $resultData = $result->fetch_assoc();
+                    echo "<p class='text-2xl font-bold'>{$resultData['NumberOfAppointments']}</p>";
+                    ?>
+                  </div>
+                </div>
+                <button onclick='printLaporan("print-appointment")'
+                  class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                  <i class="fas fa-print mr-2"></i> Print
+                </button>
+              </div>
+              <!-- Revenue overview -->
+              <div class="flex justify-around items-center p-2 bg-white rounded-lg shadow-md">
+                <div class="flex  ">
+                  <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center">
+                    <i class="fas fa-dollar-sign text-red-500 text-2xl"></i>
+                  </div>
+                  <div class="ml-4">
+                    <h2 class="text-xl font-bold">Revenue</h2>
+                    <p class="text-gray-600">Overview</p>
+                    <p class="text-2xl font-bold" id="totalAmount"></p>
+                  </div>
+                </div>
+                <!-- Tombol Print Laporan -->
+                <button onclick='printLaporan("print-revenue")'
+                  class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+                  <i class="fas fa-print mr-2"></i> Print
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End of overview -->
+
+
+        <div class="mb-4 border rounded-lg h-64 overflow-y-auto bg-white shadow-md" id="print-appointment">
           <table class="min-w-full">
             <thead>
               <tr>
@@ -200,12 +274,15 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
                 <th class='py-2 px-4 text-left text-sm font-semibold text-gray-900'>Nama</th>
                 <th class='py-2 px-4 text-left text-sm font-semibold text-gray-900'>Treatment</th>
                 <th class='py-2 px-4 text-left text-sm font-semibold text-gray-900'>Contact</th>
-                <th class='py-2 px-4 text-left text-sm font-semibold text-gray-900'>Action</th>
+                <th class='py-2 px-4 text-left text-sm font-semibold text-gray-900 hidden'>ID</th>
+                <th class='py-2 px-4 text-left text-sm font-semibold text-gray-900 hidden'>Alamat</th>
+                <th class='py-2 px-4 text-left text-sm font-semibold text-gray-900 hidden'>Email</th>
+                <th class='py-2 px-4 text-left text-sm font-semibold text-gray-900 hidden'>Treatment id</th>
+                <th class='py-2 px-4 text-left text-sm font-semibold text-gray-900' id="noprint">Action</th>
               </tr>
             </thead>
             <tbody>
               <?php
-              include '../db_connection.php';
               $sql = "SELECT * FROM costumer";
               $result = $conn->query($sql);
               if (!$result) {
@@ -219,13 +296,21 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
                     <td class='py-2 px-4 text-sm text-gray-900 font-semibold'>{$row['nama']}</td>
                     <td class='py-2 px-4 text-sm text-gray-900'>{$row['nama_treatment']}</td>
                     <td class='py-2 px-4 text-sm text-gray-900'>{$row['nomor_hp']}</td>
-                    <td class='py-2 px-4 text-sm text-gray-900'>
-                      <button class='bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600 transition duration-200'>
-                          Detail
-                      </button>
-                      <button class='bg-green-500 text-white font-semibold py-2 px-4 rounded hover:bg-green-600 transition duration-200'>
-                          Confirm
-                      </button>
+                    <td class='py-2 px-4 text-sm text-gray-900 hidden'>{$row['id']}</td>
+                    <td class='py-2 px-4 text-sm text-gray-900 hidden'>{$row['alamat']}</td>
+                    <td class='py-2 px-4 text-sm text-gray-900 hidden'>{$row['email']}</td>
+                    <td class='py-2 px-4 text-sm text-gray-900 hidden'>{$row['treatment_id']}</td>
+                    <td class='py-2 px-4 text-sm text-gray-900' id='noprint'>
+                      <a href='../src/delete_customer.php?id={$row['id']}'>
+                        <button class='bg-red-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600 transition duration-200'>
+                            Cancel
+                        </button>
+                      </a>
+                      <a href='../src/confirm.php?id={$row['id']}'>
+                        <button class='bg-green-500 text-white font-semibold py-2 px-4 rounded hover:bg-green-600 transition duration-200'>
+                            Confirm
+                        </button>
+                      </a>
                     </td>
                   </tr>
                 ";
@@ -237,8 +322,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
 
         <div class="grid grid-cols-1 md:grid-cols-4 gap-2">
           <div class="md:col-span-3">
-            <h1 class="font-bold">Revenue Overview:</h1>
-            <div class="mb-4 border rounded-lg h-52 overflow-y-auto bg-white">
+            <div class="mb-4 border rounded-lg h-52 overflow-y-auto bg-white shadow-md" id="print-revenue">
               <table class="min-w-full">
                 <thead>
                   <tr>
@@ -280,7 +364,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
                           document.addEventListener('DOMContentLoaded', () => {
                             const totalElement = document.getElementById('totalAmount');
                             if (totalElement) {
-                              totalElement.textContent = ($totalAmount).toLocaleString('id-ID');
+                              totalElement.textContent = 'Rp. ' + ($totalAmount).toLocaleString('id-ID');
                             }
                           });
                         </script>
@@ -291,15 +375,15 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
                 </tbody>
               </table>
             </div>
-            <h1 class='font-bold text-gray-900'>Total revenue: Rp. <span id="totalAmount" class=""></span></h1>
           </div>
           <div>
-            <h1 class="font-bold">Active Doctor:</h1>
-            <div class="mb-4 border rounded-lg h-52 overflow-y-auto bg-white min-w-full">
+            <div class="mb-4 border rounded-lg h-52 overflow-y-auto bg-white min-w-full shadow-md" id="print-staff">
               <table class="min-w-1/2">
                 <thead>
                   <tr>
-                    <th class='py-2 px-4 text-left text-sm font-semibold text-gray-900'>Name</th>
+                    <th class='py-2 px-4 text-left text-sm font-semibold text-gray-900'>Active staff:</th>
+                    <th class='hidden'>Role:</th>
+                    <th class='hidden'>Phone:</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -321,6 +405,8 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
                                     <p><strong>Phone: </strong>{$row['phone']}</p>
                                 </div>
                             </td>
+                            <td class='hidden'>{$row['role']}</td>
+                            <td class='hidden'>{$row['phone']}</td>
                         </tr>
                     ";
                   }
@@ -330,7 +416,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
             </div>
           </div>
         </div>
-        
+
 
         <!-- End -->
       </div>
@@ -350,15 +436,16 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
 
     var timeElement = document.querySelector(".data-time");
 
+    // Update time
     function updateTime() {
       var now = new Date();
-      var time = now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit'});
+      var time = now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
       timeElement.textContent = time;
     }
     updateTime();
     setInterval(updateTime, 1000);
 
-
+    // Format waktu
     document.addEventListener('DOMContentLoaded', () => {
       // Cari semua elemen dengan class 'payment-date'
       const paymentDateElements = document.querySelectorAll('.payment-date');
@@ -383,6 +470,36 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
       })
     })
 
+    const buttonAppointment = document.querySelector("#printppointment")
+    const buttonRevenue = document.querySelector("#printprevenue")
+
+    function printLaporan(targetID) {
+      const printableContent = document.getElementById(targetID).innerHTML;
+      console.log(printableContent)
+      const newWindow = window.open('', '_blank', 'width=800,height=600');
+      newWindow.document.write(`
+            <html>
+                <head>
+                    <title>Print Laporan</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; margin: 20px; }
+                        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+                        th, td { border: 1px solid black; padding: 8px; text-align: left; }
+                        th { background-color: #f4f4f4; }
+                        #noprint { display: none; }
+                    </style>
+                </head>
+                <body>
+                    <h1 id='title'>Laporan Data</h1>
+                    <table>
+                        ${printableContent}
+                    </table>
+                </body>
+            </html>
+        `);
+      newWindow.document.close();
+      newWindow.print();
+    }
   </script>
 </body>
 

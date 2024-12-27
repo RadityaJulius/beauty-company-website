@@ -82,269 +82,134 @@
                     <h1 class="text-lg font-bold">KlinikAnvy</h1>
                 </header>
 
-                <div class="font-roboto bg-gray-100">
+                <body class="bg-gray-100">
                     <div class="container mx-auto p-4">
-                        <h1 class="text-3xl font-bold text-center mb-8">
-                            Weekly Doctor Schedule
-                        </h1>
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 h-5/6">
-                            <!-- Monday -->
-                            <div class="bg-white p-4 rounded-lg shadow-md">
-                                <h2 class="text-xl font-bold mb-4">
-                                    Monday
-                                </h2>
-                                <div class="space-y-4">
-                                    <div class="flex items-center">
-                                        <img alt="Portrait of Dr. John Doe, a middle-aged man with glasses and a white coat"
-                                            class="w-12 h-12 rounded-full mr-4" height="50"
-                                            src="https://storage.googleapis.com/a1aa/image/SPuCHuD1ZmpTFx6MePBhbRmdepZdEuGkGUEPK18ojz08qJenA.jpg"
-                                            width="50" />
-                                        <div>
-                                            <h3 class="font-bold">
-                                                Dr. John Doe
-                                            </h3>
-                                            <p>
-                                                9:00 AM - 12:00 PM
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <img alt="Portrait of Dr. Jane Smith, a young woman with a stethoscope around her neck"
-                                            class="w-12 h-12 rounded-full mr-4" height="50"
-                                            src="https://storage.googleapis.com/a1aa/image/k14dLaY6npKkM9cSuoPw2Qtarv4KIF5m52XCIbZnvsdzaifJA.jpg"
-                                            width="50" />
-                                        <div>
-                                            <h3 class="font-bold">
-                                                Dr. Jane Smith
-                                            </h3>
-                                            <p>
-                                                1:00 PM - 4:00 PM
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-thumbtack text-gray-500 mr-2"></i>
+                            <h1 class="text-2xl font-semibold">Daftar Jadwal Dokter</h1>
+                        </div>
+                        <div class="bg-white shadow-md rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-4">
+                                <h2 class="text-xl font-semibold">Jadwal Dokter</h2>
+                                <button class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600"
+                                    onclick='printLaporan("print-schedule")'>
+                                    Cetak Jadwal
+                                </button>
                             </div>
-                            <!-- Tuesday -->
-                            <div class="bg-white p-4 rounded-lg shadow-md">
-                                <h2 class="text-xl font-bold mb-4">
-                                    Tuesday
-                                </h2>
-                                <div class="space-y-4">
-                                    <div class="flex items-center">
-                                        <img alt="Portrait of Dr. Emily Johnson, a woman with curly hair and a friendly smile"
-                                            class="w-12 h-12 rounded-full mr-4" height="50"
-                                            src="https://storage.googleapis.com/a1aa/image/A8PE0QYqroKUPZcHBQrU9FQ0U4xvw0Rb4j9RU1mVDnZyaifJA.jpg"
-                                            width="50" />
-                                        <div>
-                                            <h3 class="font-bold">
-                                                Dr. Emily Johnson
-                                            </h3>
-                                            <p>
-                                                9:00 AM - 12:00 PM
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <img alt="Portrait of Dr. Michael Brown, a man with a beard and a serious expression"
-                                            class="w-12 h-12 rounded-full mr-4" height="50"
-                                            src="https://storage.googleapis.com/a1aa/image/le4O2aHJT1xoE6emDLXmXAFNuSeXnyeFfoCrfitdvQ23uaifJA.jpg"
-                                            width="50" />
-                                        <div>
-                                            <h3 class="font-bold">
-                                                Dr. Michael Brown
-                                            </h3>
-                                            <p>
-                                                1:00 PM - 4:00 PM
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="overflow-x-auto" id="print-schedule">
+                                <table class="min-w-full bg-white">
+                                    <thead>
+                                        <tr>
+                                            <th class="py-2 px-4 bg-blue-100 border-b border-gray-200">ID</th>
+                                            <th class="py-2 px-4 bg-blue-100 border-b border-gray-200">DOKTER</th>
+                                            <th class="py-2 px-4 bg-blue-100 border-b border-gray-200">HARI</th>
+                                            <th class="py-2 px-4 bg-blue-100 border-b border-gray-200">PAGI</th>
+                                            <th class="py-2 px-4 bg-blue-100 border-b border-gray-200">SIANG/SORE</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        include '../db_connection.php';
+
+                                        $result = $conn->query("SELECT e.name, e.id, ed.pagi_start, ed.pagi_end, ed.sore_start, ed.sore_end, ed.day FROM staff e JOIN staff_schedule ed ON e.id = ed.staff_id");
+
+                                        // Initialize an array to hold the days for each name
+                                        $namesDays = [];
+                                        $idsDays = [];
+
+                                        // Organize the data by name
+                                        foreach ($result as $row) {
+                                            $namesDays[$row['name']][] = [
+                                                'id' => $row['id'],
+                                                'day' => $row['day'],
+                                                'pagi_start' => $row['pagi_start'],
+                                                'pagi_end' => $row['pagi_end'],
+                                                'sore_start' => $row['sore_start'],
+                                                'sore_end' => $row['sore_end'],
+                                            ];
+                                        }
+
+                                        // Display the data in the desired format
+                                        foreach ($namesDays as $name => $days) {
+                                            // Prepare the day information
+                                            $dayList = [];
+
+                                            // Use an associative array to collect unique IDs
+                                            $uniqueIds = [];
+
+                                            foreach ($days as $dayInfo) {
+                                                $dayList[] = $dayInfo['day'];
+                                                $uniqueIds[$dayInfo['id']] = true; // Store unique IDs
+                                            }
+
+                                            // Prepare the pagi and sore time information
+                                            $pagiTime = [];
+                                            $soreTime = [];
+
+                                            foreach ($days as $dayInfo) {
+                                                $pagiTime[] = $dayInfo['pagi_start'] . " - " . $dayInfo['pagi_end'];
+                                                $soreTime[] = $dayInfo['sore_start'] . " - " . $dayInfo['sore_end'];
+                                            }
+
+                                            // Get the unique IDs as an array
+                                            $uniqueIdList = array_keys($uniqueIds);
+
+                                            // Display the first row for the name
+                                            echo "
+                                                <tr>
+                                                    <td class='py-2 px-4 border-b border-gray-200'>" . implode(", ", $uniqueIdList) . "</td>
+                                                    <td class='py-2 px-4 border-b border-gray-200'>{$name}</td>
+                                                    <td class='py-2 px-4 border-b border-gray-200'>
+                                                        " . implode("<br>", $dayList) . "
+                                                    </td>
+                                                    <td class='py-2 px-4 border-b border-gray-200'>
+                                                        " . implode("<br>", $pagiTime) . "
+                                                    </td>
+                                                    <td class='py-2 px-4 border-b border-gray-200'>
+                                                        " . implode("<br>", $soreTime) . "
+                                                    </td>
+                                                </tr>
+                                            ";
+                                        }
+
+
+                                        ?>
+                                    </tbody>
+                                </table>
                             </div>
-                            <!-- Wednesday -->
-                            <div class="bg-white p-4 rounded-lg shadow-md">
-                                <h2 class="text-xl font-bold mb-4">
-                                    Wednesday
-                                </h2>
-                                <div class="space-y-4">
-                                    <div class="flex items-center">
-                                        <img alt="Portrait of Dr. Sarah Davis, a woman with short hair and a white coat"
-                                            class="w-12 h-12 rounded-full mr-4" height="50"
-                                            src="https://storage.googleapis.com/a1aa/image/9tM5SpTMnL58FdBOZyPDNv7lkWctRQoaFaThOPwZezXfqJenA.jpg"
-                                            width="50" />
-                                        <div>
-                                            <h3 class="font-bold">
-                                                Dr. Sarah Davis
-                                            </h3>
-                                            <p>
-                                                9:00 AM - 12:00 PM
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <img alt="Portrait of Dr. David Wilson, a man with glasses and a kind expression"
-                                            class="w-12 h-12 rounded-full mr-4" height="50"
-                                            src="https://storage.googleapis.com/a1aa/image/AypeEE7syl2EB6VKQ6je0fEcopfPow7aTCNSUkBi5Z2Asm4PB.jpg"
-                                            width="50" />
-                                        <div>
-                                            <h3 class="font-bold">
-                                                Dr. David Wilson
-                                            </h3>
-                                            <p>
-                                                1:00 PM - 4:00 PM
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Thursday -->
-                            <div class="bg-white p-4 rounded-lg shadow-md">
-                                <h2 class="text-xl font-bold mb-4">
-                                    Thursday
-                                </h2>
-                                <div class="space-y-4">
-                                    <div class="flex items-center">
-                                        <img alt="Portrait of Dr. Laura Martinez, a woman with long hair and a stethoscope"
-                                            class="w-12 h-12 rounded-full mr-4" height="50"
-                                            src="https://storage.googleapis.com/a1aa/image/qfsAD4sKL5xeE0pC49sv13outvINQMIVj2IHAV1ZgdhKrJenA.jpg"
-                                            width="50" />
-                                        <div>
-                                            <h3 class="font-bold">
-                                                Dr. Laura Martinez
-                                            </h3>
-                                            <p>
-                                                9:00 AM - 12:00 PM
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <img alt="Portrait of Dr. James Anderson, a man with a mustache and a white coat"
-                                            class="w-12 h-12 rounded-full mr-4" height="50"
-                                            src="https://storage.googleapis.com/a1aa/image/u2qQhhaIhz7JAZlS9WxAv8pkL4OEMDVUMtFRI2F4du7xaifJA.jpg"
-                                            width="50" />
-                                        <div>
-                                            <h3 class="font-bold">
-                                                Dr. James Anderson
-                                            </h3>
-                                            <p>
-                                                1:00 PM - 4:00 PM
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Friday -->
-                            <div class="bg-white p-4 rounded-lg shadow-md">
-                                <h2 class="text-xl font-bold mb-4">
-                                    Friday
-                                </h2>
-                                <div class="space-y-4">
-                                    <div class="flex items-center">
-                                        <img alt="Portrait of Dr. Karen Lee, a woman with glasses and a friendly smile"
-                                            class="w-12 h-12 rounded-full mr-4" height="50"
-                                            src="https://storage.googleapis.com/a1aa/image/JhfrC1gOY7VcWSjdDxqaGmnX5MMbTYdGP1Tf6t0t5YRBrJenA.jpg"
-                                            width="50" />
-                                        <div>
-                                            <h3 class="font-bold">
-                                                Dr. Karen Lee
-                                            </h3>
-                                            <p>
-                                                9:00 AM - 12:00 PM
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <img alt="Portrait of Dr. Robert Clark, a man with a bald head and a white coat"
-                                            class="w-12 h-12 rounded-full mr-4" height="50"
-                                            src="https://storage.googleapis.com/a1aa/image/VauRevA0yo0DeE2mASpJdqDcRX6ezI53z5fm7tPSlViSrm4PB.jpg"
-                                            width="50" />
-                                        <div>
-                                            <h3 class="font-bold">
-                                                Dr. Robert Clark
-                                            </h3>
-                                            <p>
-                                                1:00 PM - 4:00 PM
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Saturday -->
-                            <div class="bg-white p-4 rounded-lg shadow-md">
-                                <h2 class="text-xl font-bold mb-4">
-                                    Saturday
-                                </h2>
-                                <div class="space-y-4">
-                                    <div class="flex items-center">
-                                        <img alt="Portrait of Dr. Lisa Walker, a woman with a ponytail and a stethoscope"
-                                            class="w-12 h-12 rounded-full mr-4" height="50"
-                                            src="https://storage.googleapis.com/a1aa/image/MY6Cj8PUfExBUa27Zt8UKJ77Z2CT9zI8J7GQP2lk1Zui1EfTA.jpg"
-                                            width="50" />
-                                        <div>
-                                            <h3 class="font-bold">
-                                                Dr. Lisa Walker
-                                            </h3>
-                                            <p>
-                                                9:00 AM - 12:00 PM
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <img alt="Portrait of Dr. Steven Harris, a man with a beard and a white coat"
-                                            class="w-12 h-12 rounded-full mr-4" height="50"
-                                            src="https://storage.googleapis.com/a1aa/image/vgzrMHwxrQYYFVeIqeaRLV7BO1jR0sK914RFpt2T3hc4qJenA.jpg"
-                                            width="50" />
-                                        <div>
-                                            <h3 class="font-bold">
-                                                Dr. Steven Harris
-                                            </h3>
-                                            <p>
-                                                1:00 PM - 4:00 PM
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Sunday -->
-                            <div class="bg-white p-4 rounded-lg shadow-md">
-                                <h2 class="text-xl font-bold mb-4">
-                                    Sunday
-                                </h2>
-                                <div class="space-y-4">
-                                    <div class="flex items-center">
-                                        <img alt="Portrait of Dr. Nancy Young, a woman with short hair and a white coat"
-                                            class="w-12 h-12 rounded-full mr-4" height="50"
-                                            src="https://storage.googleapis.com/a1aa/image/sASVNe2JPDxuLC9cw2pMAybZ106cWaB1StZWuwQN01Tb1EfTA.jpg"
-                                            width="50" />
-                                        <div>
-                                            <h3 class="font-bold">
-                                                Dr. Nancy Young
-                                            </h3>
-                                            <p>
-                                                9:00 AM - 12:00 PM
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <img alt="Portrait of Dr. Paul King, a man with glasses and a serious expression"
-                                            class="w-12 h-12 rounded-full mr-4" height="50"
-                                            src="https://storage.googleapis.com/a1aa/image/jWg6ZJ4rvZbcO5c35GfYov1ROoeYzpwvfLYs1HAJlyMGWT8nA.jpg"
-                                            width="50" />
-                                        <div>
-                                            <h3 class="font-bold">
-                                                Dr. Paul King
-                                            </h3>
-                                            <p>
-                                                1:00 PM - 4:00 PM
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <v>
                         </div>
                     </div>
-                </div>
+                </body>
             </div>
+            <script>
+                function printLaporan(targetID) {
+                    const printableContent = document.getElementById(targetID).innerHTML;
+                    console.log(printableContent)
+                    const newWindow = window.open('', '_blank', 'width=800,height=600');
+                    newWindow.document.write(`
+                    <html>
+                        <head>
+                            <title>Print Laporan</title>
+                            <style>
+                                body { font-family: Arial, sans-serif; margin: 20px; }
+                                table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+                                th, td { border: 1px solid black; padding: 8px; text-align: left; }
+                                th { background-color: #f4f4f4; }
+                                #noprint { display: none; }
+                            </style>
+                        </head>
+                        <body>
+                            <h1>Laporan Data Karyawan</h1>
+                            <table>
+                                ${printableContent}
+                            </table>
+                        </body>
+                    </html>
+                `);
+                    newWindow.document.close();
+                    newWindow.print();
+                }
+            </script>
     </body>
 
     </html>
