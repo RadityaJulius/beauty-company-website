@@ -93,11 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               + Add treatment
             </a>
           </li>
-          <li>
-            <a href="add_schedule.php" class="block px-4 py-2 text-white hover:bg-gray-600 rounded">
-              + Add jadwal
-            </a>
-          </li>
+          
           <li>
             <a href="schedule.php" class="block px-4 py-2 text-white hover:bg-gray-600 rounded">
               Jadwal dokter

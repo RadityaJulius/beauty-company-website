@@ -13,7 +13,7 @@
         $phone = mysqli_real_escape_string($conn, $_POST['phone']);
         $shift = mysqli_real_escape_string($conn, $_POST['shift']);
         $role = mysqli_real_escape_string($conn, $_POST['role']);
-        $picture = mysqli_real_escape_string($conn, $_POST['picture']);
+        $picture = file_get_contents($_FILES['picture']['tmp_name']);
 
         // Check for empty fields
         if (empty($name) || empty($phone) || empty($shift) || empty($role)) {
@@ -37,8 +37,10 @@
             echo "<br/><a href='javascript:self.history.back();'>Go Back</a>";
         } else {
             // Insert data into database
-            $query = "INSERT INTO staff (name, phone, shift, role, profile_picture) VALUES ('$name', '$phone', '$shift', '$role', '$picture')";
-            $result = $conn->query( $query );
+            $stmt = $conn->prepare("INSERT INTO staff (name, phone, shift, role, profile_picture) VALUES (?, ?, ?, ?, ?)");
+            $stmt->bind_param( "sisss" ,$name, $phone, $shift, $role, $picture);
+            $stmt->execute();
+            $stmt->close();
 
             header("location: ../public/admin.php");
         }

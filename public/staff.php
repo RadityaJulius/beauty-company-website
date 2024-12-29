@@ -58,11 +58,8 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
                             + Add treatment
                         </a>
                     </li>
-                    <li>
-                        <a href="add_schedule.php" class="block px-4 py-2 text-white hover:bg-gray-600 rounded">
-                            + Add jadwal
-                        </a>
-                    </li>
+
+
                     <li>
                         <a href="schedule.php" class="block px-4 py-2 text-white hover:bg-gray-600 rounded">
                             Jadwal dokter
@@ -213,7 +210,8 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
                                             <button class="bg-green-500 text-white px-4 py-2 rounded"><i
                                                     class="fas fa-plus mr-2"></i>Entry Data</button>
                                         </a>
-                                        <button class="bg-red-500 text-white px-4 py-2 rounded" onclick='printLaporan("print-employee")'><i
+                                        <button class="bg-red-500 text-white px-4 py-2 rounded"
+                                            onclick='printLaporan("print-employee")'><i
                                                 class="fas fa-file-export mr-2"></i>Export Full Data</button>
                                         <a href="schedule.php">
                                             <button class="bg-yellow-500 text-white px-4 py-2 rounded"><i
@@ -253,6 +251,9 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
                                                 echo "Invalid query: " . $conn->error;
                                             }
                                             while ($row = $result->fetch_assoc()) {
+                                                // Cek apakah role pengguna adalah 'dokter'
+                                                $isDoctor = ($row['role'] == 'Doctor') ? true : false;
+
                                                 echo "
                                                     <tr class='bg-gray-50'>
                                                         <td class='py-2 px-4 border-b'>AB01</td>
@@ -261,15 +262,19 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 'admin') {
                                                         <td class='py-2 px-4 border-b'>{$row['phone']}</td>
                                                         <td class='py-2 px-4 border-b'>{$row['role']}</td>
                                                         <td class='py-2 px-4 border-b' id='noprint'>
-                                                            <div x-data='{ open: false }' class='relative'>
-                                                                <button @click='open = !open' class='bg-blue-500 text-white px-4 py-1 rounded'>Proses <i
-                                                                        class='fas fa-caret-down'></i>
-                                                                </button>
-                                                        
-                                                                <div x-show='open' @click.away='open = false' class='absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg z-10' x-transition>
-                                                                    <a href='add_schedule.php?id={$row['id']}' class='block px-4 py-2 text-gray-800 hover:bg-gray-100'>Jadwal Dokter   </a>
-                                                                </div>
-                                                            </div>
+                                                            <!-- Tombol Proses langsung menuju add_schedule.php jika role adalah Doctor -->
+                                                            <a href='add_schedule.php?id={$row['id']}' class='bg-blue-500 text-white px-4 py-1 rounded " . ($isDoctor ? "" : "hidden") . "'>
+                                                                Jadwal
+                                                            </a>
+
+                                                            <!-- Tombol Edit di samping tombol Proses -->
+                                                            <a href='edit_staff.php?id={$row['id']}' class='text-yellow-500 hover:bg-yellow-200 px-4 py-1 rounded ml-2'>Edit</a>
+
+                                                            <!-- Tombol Delete di samping tombol Proses -->
+                                                            <form action='delete_staff.php' method='POST' class='inline ml-2'>
+                                                                <input type='hidden' name='id' value='{$row['id']}'>
+                                                                <button type='submit' class='text-red-500 hover:bg-red-200 px-4 py-1 rounded' onclick='return confirm(\"Are you sure you want to delete this staff member?\")'>Delete</button>
+                                                            </form>
                                                         </td>
                                                     </tr>
                                                 ";

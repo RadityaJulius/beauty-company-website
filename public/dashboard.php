@@ -15,7 +15,9 @@
   <!-- Fonts -->
   <link href="../https://fonts.googleapis.com" rel="preconnect">
   <link href="../https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="../https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="../https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -26,8 +28,8 @@
 
   <!-- Main CSS File -->
   <link href="../assets/css/main1.css" rel="stylesheet">
-  
- 
+
+
   <!-- =======================================================
   * Template Name: Reveal
   * Template URL: https://bootstrapmade.com/reveal-bootstrap-corporate-template/
@@ -44,7 +46,8 @@
     <div class="topbar d-flex align-items-center">
       <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="contact-info d-flex align-items-center">
-          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">klinik_anvy@gmail.com</a></i>
+          <i class="bi bi-envelope d-flex align-items-center"><a
+              href="mailto:contact@example.com">klinik_anvy@gmail.com</a></i>
           <i class="bi bi-phone d-flex align-items-center ms-4"><span>+62 8123 4567 8901</span></i>
         </div>
         <div class="social-links d-none d-md-flex align-items-center">
@@ -111,7 +114,10 @@
           <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
             <div class="col-lg-8 text-center">
               <h2>Selamat <span>Datang di</span> Klinik Anvy!</h2>
-              <p>"Selamat datang di Klinik Anvy, tempat perawatan terbaik untuk kulit, tubuh, wajah, dan rambut Anda. Dengan layanan yang dirancang untuk semua, kami siap membantu Anda tampil percaya diri dan merawat kesehatan kulit secara menyeluruh. Didukung oleh teknologi terkini dan produk berkualitas, kami hadir untuk mendukung setiap langkah Anda menuju kebugaran dan keindahan alami."</p>
+              <p>"Selamat datang di Klinik Anvy, tempat perawatan terbaik untuk kulit, tubuh, wajah, dan rambut Anda.
+                Dengan layanan yang dirancang untuk semua, kami siap membantu Anda tampil percaya diri dan merawat
+                kesehatan kulit secara menyeluruh. Didukung oleh teknologi terkini dan produk berkualitas, kami hadir
+                untuk mendukung setiap langkah Anda menuju kebugaran dan keindahan alami."</p>
               <!-- <a href="#featured-services" class="btn-get-started">Get Started</a> -->
             </div>
           </div>
@@ -156,22 +162,29 @@
           <div class="col-lg-6 content">
             <h3>Anvy Story</h3>
             <p>
-              <h5 class="text-justify">Klinik Anvy hadir untuk memberikan pengalaman estetika premium yang berfokus pada hasil yang optimal dan tampak alami, sesuai dengan harapan setiap individu. Dengan mengutamakan standar pelayanan terbaik serta prosedur yang aman, kami menyediakan berbagai perawatan estetika wajah, tubuh, dan kulit. Didukung oleh tenaga profesional, teknologi modern, dan tim yang berdedikasi, kami siap membantu Anda meraih penampilan terbaik dengan pendekatan yang personal dan terpercaya.</h5>
+            <h5 class="text-justify">Klinik Anvy hadir untuk memberikan pengalaman estetika premium yang berfokus pada
+              hasil yang optimal dan tampak alami, sesuai dengan harapan setiap individu. Dengan mengutamakan standar
+              pelayanan terbaik serta prosedur yang aman, kami menyediakan berbagai perawatan estetika wajah, tubuh, dan
+              kulit. Didukung oleh tenaga profesional, teknologi modern, dan tim yang berdedikasi, kami siap membantu
+              Anda meraih penampilan terbaik dengan pendekatan yang personal dan terpercaya.</h5>
             </p>
 
             <style>
-                h5.text-justify {
-                    text-align: justify; /* Rata kanan-kiri */
-                    font-size: 1.1rem; /* Ukuran font disesuaikan */
-                    line-height: 1.6; /* Jarak antar baris agar lebih nyaman dibaca */
-                }
+              h5.text-justify {
+                text-align: justify;
+                /* Rata kanan-kiri */
+                font-size: 1.1rem;
+                /* Ukuran font disesuaikan */
+                line-height: 1.6;
+                /* Jarak antar baris agar lebih nyaman dibaca */
+              }
 
-                /* Membatasi lebar agar teks tidak terlalu melebar */
-                p {
-                    max-width: 800px;
-                    margin: 0 auto;
-                    padding: 20px;
-                }
+              /* Membatasi lebar agar teks tidak terlalu melebar */
+              p {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+              }
             </style>
           </div>
         </div>
@@ -197,7 +210,8 @@
               <i class="bi bi-emoji-heart-eyes icon flex-shrink-0"></i>
               <div>
                 <h4 class="title"><a href="service-details.html" class="stretched-link">Face</a></h4>
-                <p class="description">Klinik Anvy menawarkan perawatan facial untuk membantu Anda tampil lebih kencang, muda, dan percaya diri dengan hasil yang natural dan maksimal.</p>
+                <p class="description">Klinik Anvy menawarkan perawatan facial untuk membantu Anda tampil lebih kencang,
+                  muda, dan percaya diri dengan hasil yang natural dan maksimal.</p>
               </div>
             </div>
           </div><!-- End Service Item -->
@@ -207,7 +221,8 @@
               <i class="bi bi-flower1 icon flex-shrink-0"></i>
               <div>
                 <h4 class="title"><a href="service-details.html" class="stretched-link">Body</a></h4>
-                <p class="description">Klinik Anvy melayani perawatan badan seperti sculpsure, lipojex body, dan body contouring untuk membentuk tubuh ideal secara aman dan efektif.</p>
+                <p class="description">Klinik Anvy melayani perawatan badan seperti sculpsure, lipojex body, dan body
+                  contouring untuk membentuk tubuh ideal secara aman dan efektif.</p>
               </div>
             </div>
           </div><!-- End Service Item -->
@@ -217,7 +232,8 @@
               <i class="bi bi-scissors icon flex-shrink-0"></i>
               <div>
                 <h4 class="title"><a href="service-details.html" class="stretched-link">Hair</a></h4>
-                <p class="description">Klinik Anvy melayani perawatan rambut membantu menguatkan akar rambut, mempercepat pertumbuhan, dan mengurangi kerontokan, sehingga rambut menjadi lebih kuat dan lebat.</p>
+                <p class="description">Klinik Anvy melayani perawatan rambut membantu menguatkan akar rambut,
+                  mempercepat pertumbuhan, dan mengurangi kerontokan, sehingga rambut menjadi lebih kuat dan lebat.</p>
               </div>
             </div>
           </div><!-- End Service Item -->
@@ -227,7 +243,8 @@
               <i class="bi bi-brush icon flex-shrink-0"></i>
               <div>
                 <h4 class="title"><a href="service-details.html" class="stretched-link">Nails</a></h4>
-                <p class="description">klinik Anvy melayani nails untuk kuku sehat, cantik, dan menawan sesuai gaya Anda.</p>
+                <p class="description">klinik Anvy melayani nails untuk kuku sehat, cantik, dan menawan sesuai gaya
+                  Anda.</p>
               </div>
             </div>
           </div><!-- End Service Item -->
@@ -238,21 +255,21 @@
               <div>
                 <h4 class="title"><a href="service-details.html" class="stretched-link">Skin</a></h4>
                 <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>-->
-              </div>
-            </div>
-          </div><!-- End Service Item -->
+        </div>
+      </div>
+      </div><!-- End Service Item -->
 
-          <!--<div class="col-md-6" data-aos="fade-up" data-aos-delay="600">
+      <!--<div class="col-md-6" data-aos="fade-up" data-aos-delay="600">
             <div class="service-item d-flex position-relative h-100">
               <i class="bi bi-calendar4-week icon flex-shrink-0"></i>
               <div>
                 <h4 class="title"><a href="service-details.html" class="stretched-link"></a></h4>
                 <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>-->
-              </div>
-            </div>
-          </div><!-- End Service Item -->
+      </div>
+      </div>
+      </div><!-- End Service Item -->
 
-        </div>
+      </div>
 
       </div>
 
@@ -323,145 +340,55 @@
         <!--<p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
       </div> End Section Title -->
 
-      <div class="container">
+        <div class="container">
 
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+          <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-app">Face</li>
-            <li data-filter=".filter-product">Body</li>
-            <li data-filter=".filter-branding">Hair</li>
-            <li data-filter=".filter-books">Nails</li>
-          </ul><!-- End Portfolio Filters -->
+            <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".Face">Face</li>
+              <li data-filter=".Body">Body</li>
+              <li data-filter=".Hair">Hair</li>
+              <li data-filter=".Nail">Nails</li>
+            </ul><!-- End Portfolio Filters -->
 
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+            <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+              <?php
+              include '../db_connection.php';
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="../assets/img/portfolio/face1.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="../assets/img/portfolio/app-1.jpg" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
+              $result = mysqli_query($conn, 'SELECT * FROM treatment');
+              while ($row = mysqli_fetch_assoc($result)) {
+                $name = $row['nama_treatment'];
+                $description = $row['deskripsi'];
+                $category = $row['category'];
+                if (!empty($row['picture'])) {
+                  $imageData = base64_encode($row['picture']);
+                  $src = 'data:image/png;base64,' . $imageData;
+                } else {
+                  // Set a default image URL if profile_picture is empty
+                  $src = '../assets/img/team/team-1.jpg'; // Replace with the actual path to your default image
+                }
+                echo "
+                <div class='col-lg-4 col-md-6 portfolio-item isotope-item $category'>
+                  <img src='$src' class='img-fluid' alt=''>
+                  <div class='portfolio-info'>
+                    <h4>$name</h4>
+                    <p>$description</p>
+                    <a href='../assets/img/portfolio/app-1.jpg' title='App 1' data-gallery='portfolio-gallery-app'
+                      class='glightbox preview-link'><i class='bi bi-zoom-in'></i></a>
+                    <a href='portfolio-details.html' title='More Details' class='details-link'><i
+                        class='bi bi-link-45deg'></i></a>
+                  </div>
+                </div><!-- End Portfolio Item -->
+                ";
+              }
+              ?>
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="../assets/img/portfolio/body1.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 1</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="../assets/img/portfolio/product-1.jpg" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
+            </div><!-- End Portfolio Container -->
 
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="../assets/img/portfolio/hair1.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Branding 1</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="../assets/img/portfolio/branding-1.jpg" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <img src="../assets/img/portfolio/nails1.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Books 1</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="../assets/img/portfolio/books-1.jpg" title="Branding 1" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="../assets/img/portfolio/face2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 2</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="../assets/img/portfolio/app-2.jpg" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="../assets/img/portfolio/body2.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 2</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="../assets/img/portfolio/product-2.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="../assets/img/portfolio/hair2.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Branding 2</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="../assets/img/portfolio/branding-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <img src="../assets/img/portfolio/nails2.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Books 2</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="../assets/img/portfolio/books-2.jpg" title="Branding 2" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="../assets/img/portfolio/face3.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="../assets/img/portfolio/app-3.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="../assets/img/portfolio/body3.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 3</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="../assets/img/portfolio/product-3.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="../assets/img/portfolio/hair3.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Branding 3</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="../assets/img/portfolio/branding-3.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books">
-              <img src="../assets/img/portfolio/nails3.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Books 3</h4>
-                <p>Lorem ipsum, dolor sit amet consectetur</p>
-                <a href="../assets/img/portfolio/books-3.jpg" title="Branding 3" data-gallery="portfolio-gallery-book" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-          </div><!-- End Portfolio Container -->
+          </div>
 
         </div>
-
-      </div>
 
     </section><!-- /Portfolio Section -->
 
@@ -510,11 +437,13 @@
                 <h3>Bryan</h3>
                 <h4>Ceo &amp; Founder</h4>
                 <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
                   <i class="bi bi-quote quote-icon-left"></i>
-                  <span>"Pelayanan di Klinik Anvy luar biasa! Stafnya ramah, profesional, dan benar-benar memahami kebutuhan saya. Hasil perawatannya pun sangat memuaskan."</span>
+                  <span>"Pelayanan di Klinik Anvy luar biasa! Stafnya ramah, profesional, dan benar-benar memahami
+                    kebutuhan saya. Hasil perawatannya pun sangat memuaskan."</span>
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
@@ -526,11 +455,13 @@
                 <h3>Charissa</h3>
                 <h4>Designer</h4>
                 <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
                   <i class="bi bi-quote quote-icon-left"></i>
-                  <span>"Saya merasa sangat nyaman di Klinik Anvy. Prosedurnya aman, alat yang digunakan modern, dan hasilnya terlihat natural seperti yang saya inginkan."</span>
+                  <span>"Saya merasa sangat nyaman di Klinik Anvy. Prosedurnya aman, alat yang digunakan modern, dan
+                    hasilnya terlihat natural seperti yang saya inginkan."</span>
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
@@ -542,11 +473,13 @@
                 <h3>Adelarch</h3>
                 <h4>Store Owner</h4>
                 <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
                   <i class="bi bi-quote quote-icon-left"></i>
-                  <span>"Klinik Anvy benar-benar tempat terbaik untuk perawatan kulit dan tubuh. Penjelasan dokternya sangat detail, sehingga saya merasa aman dan percaya."</span>
+                  <span>"Klinik Anvy benar-benar tempat terbaik untuk perawatan kulit dan tubuh. Penjelasan dokternya
+                    sangat detail, sehingga saya merasa aman dan percaya."</span>
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
@@ -558,11 +491,13 @@
                 <h3>Radit</h3>
                 <h4>Freelancer</h4>
                 <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
                   <i class="bi bi-quote quote-icon-left"></i>
-                  <span>"Pengalaman pertama saya di Klinik Anvy sangat memuaskan. Timnya ahli dan fasilitasnya sangat bersih. Pasti akan kembali lagi untuk perawatan lainnya!"</span>
+                  <span>"Pengalaman pertama saya di Klinik Anvy sangat memuaskan. Timnya ahli dan fasilitasnya sangat
+                    bersih. Pasti akan kembali lagi untuk perawatan lainnya!"</span>
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
@@ -574,11 +509,13 @@
                 <h3>Ranop</h3>
                 <h4>Entrepreneur</h4>
                 <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
                   <i class="bi bi-quote quote-icon-left"></i>
-                  <span>"Saya mengikuti beberapa perawatan di sini, dan hasilnya luar biasa! Kulit terasa lebih sehat dan percaya diri pun meningkat."</span>
+                  <span>"Saya mengikuti beberapa perawatan di sini, dan hasilnya luar biasa! Kulit terasa lebih sehat
+                    dan percaya diri pun meningkat."</span>
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
@@ -600,7 +537,8 @@
         <div class="row" data-aos="zoom-in" data-aos-delay="100">
           <div class="col-xl-9 text-center text-xl-start">
             <h3>Call To Action</h3>
-            <p>Segera jadwalkan konsultasi Anda di Klinik Anvy dan temukan perawatan terbaik untuk tampil percaya diri setiap hari!</p>
+            <p>Segera jadwalkan konsultasi Anda di Klinik Anvy dan temukan perawatan terbaik untuk tampil percaya diri
+              setiap hari!</p>
           </div>
           <div class="col-xl-3 cta-btn-container text-center">
             <a class="cta-btn align-middle" href="#">Call To Action</a>
@@ -615,7 +553,7 @@
     <section id="team" class="team section">
 
       <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
+      <div class="container section-title " data-aos="fade-up">
         <h2>Dokter</h2>
         <p>Daftar Dokter Klinik Anvy</p>
       </div><!-- End Section Title -->
@@ -623,80 +561,44 @@
       <div class="container">
 
         <div class="row gy-4">
+          <?php
+          include '../db_connection.php';
+          $result = mysqli_query($conn, 'SELECT * FROM staff');
+          while ($res = mysqli_fetch_assoc($result)) {
+            if (!empty($res['profile_picture'])) {
+              $imageData = base64_encode($res['profile_picture']);
+              $src = 'data:image/png;base64,' . $imageData;
+            } else {
+              // Set a default image URL if profile_picture is empty
+              $src = '../assets/img/team/team-1.jpg'; // Replace with the actual path to your default image
+            }
+            $name = htmlspecialchars($res['name']);
+            $role = htmlspecialchars($res['role']);
+            echo "
+                <div class='col-lg-3 col-md-6 d-flex align-items-stretch' data-aos='fade-up' data-aos-delay='100'>
+                  <div class='team-member'>
+                    <div class='member-img'>" . "
+                      <img src='$src' class='img-fluid' alt='profilepicture'>
+                      <div class='social'>
+                        <a href=''><i class='bi bi-twitter-x'></i></a>
+                        <a href=''><i class='bi bi-facebook'></i></a>
+                        <a href=''><i class='bi bi-instagram'></i></a>
+                        <a href=''><i class='bi bi-linkedin'></i></a>
+                      </div>
+                    </div>
+                    <div class='member-info'>
+                      <h4>$name</h4>
+                      <span>$role</span>
+                    </div>
+                  </div>
+                </div><!-- End Team Member -->
+              ";
+          }
+          ?>
 
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="../assets/img/team/team-1.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Farid Febry</h4>
-                <span>Spesialis Kulit</span>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
+        </div><!-- End Team Member -->
 
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="../assets/img/team/team-2.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Khansa Gyna</h4>
-                <span>Dokter</span>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="../assets/img/team/team-3.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Fernando Saragi</h4>
-                <span>Spesialis Kulit</span>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="../assets/img/team/team-4.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Miranti Rahayu</h4>
-                <span>Dokter</span>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-        </div>
+      </div>
 
       </div>
 
@@ -714,61 +616,31 @@
       <div class="container" data-aos="zoom-in" data-aos-delay="100">
 
         <div class="row g-4">
+          <?php
+          include '../db_connection.php';
 
-          <div class="col-lg-4">
-            <div class="pricing-item">
-              <h3>Free Plan</h3>
-              <div class="icon">
-                <i class="bi bi-box"></i>
+          $result = mysqli_query($conn, 'SELECT * FROM treatment');
+          while ($res = mysqli_fetch_assoc($result)) {
+            $treatment = $res['nama_treatment'];
+            $harga = $res['harga'];
+            $description = $res['deskripsi'];
+            echo "
+            <div class='col-lg-4'>
+              <div class='pricing-item'>
+                <h3>$treatment</h3>
+                <div class='icon'>
+                  <i class='bi bi-box'></i>
+                </div>
+                <h4 id='priceElement'>$harga</h4>
+                <ul>
+                  <span>$description</span>
+                </ul>
+                <div class='text-center'><a href='booking.php' class='buy-btn'>Buy Now</a></div>
               </div>
-              <h4><sup>$</sup>0<span> / month</span></h4>
-              <ul>
-                <li><i class="bi bi-check"></i> <span>Quam adipiscing vitae proin</span></li>
-                <li><i class="bi bi-check"></i> <span>Nec feugiat nisl pretium</span></li>
-                <li><i class="bi bi-check"></i> <span>Nulla at volutpat diam uteera</span></li>
-                <li class="na"><i class="bi bi-x"></i> <span>Pharetra massa massa ultricies</span></li>
-                <li class="na"><i class="bi bi-x"></i> <span>Massa ultricies mi quis hendrerit</span></li>
-              </ul>
-              <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div>
             </div>
-          </div><!-- End Pricing Item -->
-
-          <div class="col-lg-4">
-            <div class="pricing-item featured">
-              <h3>Business Plan</h3>
-              <div class="icon">
-                <i class="bi bi-rocket"></i>
-              </div>
-
-              <h4><sup>$</sup>29<span> / month</span></h4>
-              <ul>
-                <li><i class="bi bi-check"></i> <span>Quam adipiscing vitae proin</span></li>
-                <li><i class="bi bi-check"></i> <span>Nec feugiat nisl pretium</span></li>
-                <li><i class="bi bi-check"></i> <span>Nulla at volutpat diam uteera</span></li>
-                <li><i class="bi bi-check"></i> <span>Pharetra massa massa ultricies</span></li>
-                <li><i class="bi bi-check"></i> <span>Massa ultricies mi quis hendrerit</span></li>
-              </ul>
-              <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div>
-            </div>
-          </div><!-- End Pricing Item -->
-
-          <div class="col-lg-4">
-            <div class="pricing-item">
-              <h3>Developer Plan</h3>
-              <div class="icon">
-                <i class="bi bi-send"></i>
-              </div>
-              <h4><sup>$</sup>49<span> / month</span></h4>
-              <ul>
-                <li><i class="bi bi-check"></i> <span>Quam adipiscing vitae proin</span></li>
-                <li><i class="bi bi-check"></i> <span>Nec feugiat nisl pretium</span></li>
-                <li><i class="bi bi-check"></i> <span>Nulla at volutpat diam uteera</span></li>
-                <li><i class="bi bi-check"></i> <span>Pharetra massa massa ultricies</span></li>
-                <li><i class="bi bi-check"></i> <span>Massa ultricies mi quis hendrerit</span></li>
-              </ul>
-              <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div>
-            </div>
-          </div><!-- End Pricing Item -->
+            ";
+          }
+          ?>
 
         </div>
 
@@ -835,51 +707,69 @@
                 <i class="faq-toggle bi bi-chevron-right"></i>
               </div>End Faq item-->
 
-            </div>
-
-          </div>
         </div>
+
+      </div>
+      </div>
 
       </div>
 
     </section><!-- /Faq Section -->
     <footer id="footer" class="footer" style="background-color: #862B0D; color: white; padding: 40px 0;">
-    <div class="container">
+      <div class="container">
         <h3 class="sitename" style="font-family: 'Montserrat', sans-serif; color: #FFC95F;">Klinik Anvy</h3>
-        <p style="font-size: 1.1rem; margin-bottom: 30px;">Kami hadir untuk memberikan perawatan estetika terbaik, dengan tenaga profesional dan teknologi canggih untuk memastikan penampilan terbaik dan alami untuk Anda.</p>
+        <p style="font-size: 1.1rem; margin-bottom: 30px;">Kami hadir untuk memberikan perawatan estetika terbaik,
+          dengan tenaga profesional dan teknologi canggih untuk memastikan penampilan terbaik dan alami untuk Anda.</p>
 
         <div class="social-links d-flex justify-content-center" style="gap: 15px;">
-            <a href="https://twitter.com/klinik_anvy" target="_blank" style="color: #FFC95F;"><i class="bi bi-twitter"></i></a>
-            <a href="https://www.facebook.com/klinik_anvy" target="_blank" style="color: #FFC95F;"><i class="bi bi-facebook"></i></a>
-            <a href="https://www.instagram.com/klinik_anvy" target="_blank" style="color: #FFC95F;"><i class="bi bi-instagram"></i></a>
-            <a href="https://www.linkedin.com/company/klinik-anvy" target="_blank" style="color: #FFC95F;"><i class="bi bi-linkedin"></i></a>
+          <a href="https://twitter.com/klinik_anvy" target="_blank" style="color: #FFC95F;"><i
+              class="bi bi-twitter"></i></a>
+          <a href="https://www.facebook.com/klinik_anvy" target="_blank" style="color: #FFC95F;"><i
+              class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/klinik_anvy" target="_blank" style="color: #FFC95F;"><i
+              class="bi bi-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/klinik-anvy" target="_blank" style="color: #FFC95F;"><i
+              class="bi bi-linkedin"></i></a>
         </div>
 
         <div class="container mt-4">
-            <div class="copyright" style="font-size: 0.9rem; text-align: center;">
-                <span>Copyright &copy;</span> <strong class="px-1 sitename">Klinik Anvy</strong> <span>All Rights Reserved</span>
-            </div>
+          <div class="copyright" style="font-size: 0.9rem; text-align: center;">
+            <span>Copyright &copy;</span> <strong class="px-1 sitename">Klinik Anvy</strong> <span>All Rights
+              Reserved</span>
+          </div>
         </div>
-    </div>
-          </footer>
+      </div>
+    </footer>
 
-  
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS Files -->
-  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/vendor/php-email-form/validate.js"></script>
-  <script src="../assets/vendor/aos/aos.js"></script>
-  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <!-- Preloader -->
+    <div id="preloader"></div>
 
-  <!-- Main JS File -->
-  <script src="../assets/js/main.js"></script>
+    <script>
+      const priceElements = document.querySelectorAll('#priceElement')
+      priceElements.forEach(element => {
+        const value = parseFloat(element.textContent);
+        if (!isNaN(value)) {
+          element.textContent = "Rp. " + value.toLocaleString('ID-id')
+        }
+      })
+      console.log(priceElements)
+    </script>
+
+    <!-- Vendor JS Files -->
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendor/php-email-form/validate.js"></script>
+    <script src="../assets/vendor/aos/aos.js"></script>
+    <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="../assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="../assets/js/main.js"></script>
 
 </body>
